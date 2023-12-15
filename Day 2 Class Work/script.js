@@ -1,6 +1,5 @@
 const h1Tag = React.createElement("h1", null, "Learn Web Devlopment");
 
-//!  First paragraph
 const p1Tag = React.createElement(
   "p",
   null,
@@ -8,7 +7,6 @@ const p1Tag = React.createElement(
 );
 const firstDiv = React.createElement("div", { className: "firstDiv" }, p1Tag);
 
-//! Second Paragraph
 const aTag = React.createElement(
   "a",
   { href: "https://developer.mozilla.org/en-US/" },
@@ -24,7 +22,6 @@ const p2Tag = React.createElement(
 );
 const secondDiv = React.createElement("div", { className: "secondDiv" }, p2Tag);
 
-//! Third Paragraph
 const p3Tag = React.createElement(
   "p",
   null,

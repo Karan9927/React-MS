@@ -1,4 +1,3 @@
-//!  First paragraph
 const h1Tag = React.createElement("h1", null, "Topics covered");
 
 const p = React.createElement(
@@ -25,7 +24,6 @@ const firstDiv = React.createElement(
   React.createElement("br")
 );
 
-//! Second Paragraph
 const a2Tag = React.createElement(
   "a",
   { href: "" },
@@ -44,7 +42,6 @@ const secondDiv = React.createElement(
   p2Tag,
   React.createElement("br")
 );
-//! Third Paragraph
 const a3Tag = React.createElement("a", { href: "" }, "CSS -- Styling the web");
 
 const p3Tag = React.createElement(
