@@ -1,3 +1,5 @@
+## Hosted Link
+[Click here to check out the site](https://day3homework.netlify.app/)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
