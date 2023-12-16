@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.heading {
+  font-size: 42px;
+  font-weight: 400;
+  color: #982048;
+  margin: 10px 0;
+}
+.sub-heading {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.navlinks {
+  display: flex;
+  list-style: none;
+  font-size: 20px;
+  justify-content: space-between;
+}
+.active {
+  background-color: #982048;
+}
+li {
+  background-color: gray;
+  padding: 10px 120px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+li:hover {
+  background-color: #982048;
+}
+.banner {
+  width: 100%;
+  margin: 10px;
+  height: 800px;
+}
+.contact {
+  background-color: #982048;
+  padding: 40px;
+  text-align: center;
+  color: white;
+}
+.contact h1 {
+  font-size: 56px;
+  font-weight: 400;
+}
+.contact p {
+  font-size: 22px;
+  margin: 20px 0;
+}
+.button-container button {
+  background-color: #982048;
+  border: 1px solid white;
+  padding: 20px 60px;
+  color: white;
+  font-weight: 600;
+  margin: 20px 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.vacancy {
+  font-size: 20px;
+  margin: 10px 0;
+  padding: 20px;
+}
+.vacancy p {
+  margin: 15px 0;
+  font-weight: 600;
+}
+.first {
+  color: #982048;
+}
+.address {
+  text-align: center;
+  padding: 40px;
+}
+.address h3 {
+  font-size: 36px;
+  font-weight: 400;
+  color: #982048;
+  margin-bottom: 10px;
+}
+.address p {
+  font-size: 20px;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+}
