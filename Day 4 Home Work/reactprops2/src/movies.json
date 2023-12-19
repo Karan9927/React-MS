@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Bright",
+    "duration": "117 min",
+    "description": "Set in a world where fantasy creatures live side by side with humans. A human cop is forces to work with an Orc to find a weapon everyone is prepared to kill for.",
+    "release": 2017,
+    "director": "David Ayer",
+    "genre": "Action, Crime, Fantasy",
+    "thumbnail": "https://leganerd.com/wp-content/uploads/2017/11/Bright_ITA.jpg",
+    "movie_image": "https://static1.srcdn.com/wordpress/wp-content/uploads/2017/12/Bright-movie-banner.jpg",
+    "color": "#ba5b3d"
+  },
+  {
+    "id": 2,
+    "name": "Tomb Raider",
+    "duration": "125 min",
+    "description": "Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits when she finds herself on the island where her father disappeared.",
+    "release": 2018,
+    "director": "Roar Uthaug",
+    "genre": "Action, Fantasy",
+    "thumbnail": "https://image.tmdb.org/t/p/original/s4Qn5LF6OwK4rIifmthIDtbqDSs.jpg",
+    "movie_image": "https://images.hdqwalls.com/wallpapers/tomb-raider-2018-movie-alicia-vikander-5s.jpg",
+    "color": "#0C705E"
+  }
+]

@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  background-color: #0d0d0c;
+  scroll-behavior: smooth;
+}
+.card {
+  display: flex;
+  background-color: #0d0d0c;
+  margin: 40px 160px;
+  margin-bottom: 80px;
+  border-radius: 12px;
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 65%;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+
+.overlay {
+  z-index: 5;
+  background: rgb(13, 13, 12);
+  background: linear-gradient(
+    90deg,
+    rgba(13, 13, 12, 1) 59%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  width: 350px;
+}
+.thumbnail img {
+  width: 80px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  background-color: #0d0d0c;
+  border-radius: 12px 0 0 12px;
+  padding: 40px 40px 20px 40px;
+}
+.details {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 120px;
+}
+.description p {
+  margin-top: 20px;
+  width: 350px;
+  color: #f3f3f3;
+}
+.movie-title {
+  font-size: 32px;
+}
+.director {
+  color: #73ade0;
+}
+.duration {
+  border: 1px solid gray;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.movie-duration-info {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.genre {
+  color: #f3f3f3;
+}
+.button-container {
+  margin-top: 60px;
+  color: #6e6e6d;
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+
+@media (max-width: 1024px) {
+  .director {
+    margin-bottom: 10px;
+  }
+  .genre {
+    margin-top: 10px;
+  }
+  .card {
+    margin: 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .overlay {
+    background: rgb(13, 13, 12);
+    background: linear-gradient(
+      90deg,
+      rgba(13, 13, 12, 1) 19%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    width: 30px;
+  }
+  .card {
+    background-size: 100%;
+  }
+  .info {
+    border-radius: 12px 0 0 12px;
+  }
+}
+@media (max-width: 767px) {
+  .card {
+    border-radius: 12px;
+    margin: 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-image: none;
+    border-radius: 12px;
+  }
+  .overlay {
+    width: 10px;
+  }
+  .info {
+    padding: 20px 25px;
+    border-radius: 12px;
+  }
+  .description p {
+    width: 260px;
+  }
+  .duration {
+    padding: 2px;
+  }
+  .button-container {
+    margin-top: 40px;
+  }
+  .movie-duration-info {
+    display: inline;
+    gap: 5px;
+    line-height: 18px;
+    font-size: 14px;
+  }
+  .movie-title {
+    font-size: 24px;
+  }
+  .duration {
+    font-size: 12px;
+  }
+}
