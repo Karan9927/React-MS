@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+  padding: 10px;
+}
+.heading {
+  text-align: center;
+  margin: 20px;
+  margin-bottom: 30px;
+}
+.password {
+  display: flex;
+  margin-bottom: 20px;
+}
+.pass {
+  width: 100%;
+  border: 1px solid rgb(193, 193, 193);
+  border-radius: 4px;
+  background-color: rgb(236, 236, 236);
+  padding: 8px;
+  font-size: 18px;
+}
+.length-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.generate {
+  width: 100%;
+  padding: 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: #116bb4;
+  color: white;
+  cursor: pointer;
+}
+.checkbox-container {
+  margin-bottom: 10px;
+}
+.length {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid rgb(196, 196, 196);
+  font-size: 15px;
+}
+.copy {
+  font-size: 18px;
+  padding: 4px;
+  cursor: pointer;
+}
+.copy:hover {
+  color: white;
+}
+button:hover {
+  background-color: green;
+}
+.checkbox-container input {
+  margin-right: 5px;
+}
