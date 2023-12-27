@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { MdDelete } from "react-icons/md";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [cards, setCards] = useState([]);
   const [grocery, setGrocery] = useState("");
-  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const storedCards = localStorage.getItem("cards");
@@ -24,12 +24,9 @@ function App() {
   };
 
   const addToList = () => {
-    if (grocery == "") {
-      setMessage("❗Please Provide Value");
+    if (grocery === "") {
+      toast.error("Please Provide Value !");
       setGrocery("");
-      setTimeout(() => {
-        setMessage("");
-      }, 4000);
     } else {
       const newItem = {
         id: cards.length + 1,
@@ -38,22 +35,14 @@ function App() {
       };
       setCards([...cards, newItem]);
       setGrocery("");
-      setMessage("Item Added To The List");
-
-      setTimeout(() => {
-        setMessage("");
-      }, 4000);
+      toast.success("Item Added To The List");
     }
   };
 
   const deleteHandler = (id) => {
     const updatedList = cards.filter((item) => item.id !== id);
     setCards(updatedList);
-    setMessage("Item Deleted !");
-
-    setTimeout(() => {
-      setMessage("");
-    }, 4000);
+    toast.success("Item Deleted !");
   };
 
   const checkboxHandler = (id) => {
@@ -63,9 +52,6 @@ function App() {
       )
     );
   };
-  const cross = () => {
-    setMessage("");
-  };
   return (
     <div className="App">
       <div className="container">
@@ -73,6 +59,20 @@ function App() {
         <div className="input">
           <input onChange={groceryHandler} value={grocery} type="text" />
           <button onClick={addToList}>Add Item</button>
+        </div>
+        <div>
+          <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
         </div>
 
         {cards.map((card) => (
@@ -97,15 +97,6 @@ function App() {
           </div>
         ))}
       </div>
-      {message && (
-        <div className="message">
-          {message}
-          <button className="cross" onClick={cross}>
-            X
-          </button>
-          <div className="timer-line" />
-        </div>
-      )}
     </div>
   );
 }
