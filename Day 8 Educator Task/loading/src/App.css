@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app {
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 50%;
+}
+.progress-container {
+  background-color: rgb(77, 77, 77);
+  padding: 6px;
+  height: 42px;
+  border-radius: 18px;
+}
+.progress-bar {
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 100px white;
+  transition: all 0.3s ease;
+}
+.percentage {
+  color: black;
+  font-family: "Merriweather";
+  transition: all 0.3s ease;
+}
+.message {
+  text-align: center;
+  color: white;
+  transition: all 0.3s ease;
+  margin-top: 40px;
+}
+.heading {
+  color: white;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container {
+    width: 80%;
+  }
+}
