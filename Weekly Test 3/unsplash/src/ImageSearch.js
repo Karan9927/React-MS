@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Card from "./Card";
+import Detail from "./Detail";
 
 const ImageSearch = () => {
   const [results, setResults] = useState([]);
@@ -9,6 +10,8 @@ const ImageSearch = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
+  const [clicked, setClicked] = useState(false);
+  const [oneCard, setOneCard] = useState({});
 
   const fetchImages = async () => {
     try {
@@ -71,39 +74,82 @@ const ImageSearch = () => {
   const handleChange = (event) => {
     setSearch(event.target.value);
   };
-
+  const handleSwitch = () => {
+    setClicked(true);
+  };
+  const handleBack = () => {
+    setClicked(false);
+  };
+  const getId = (id) => {
+    const filtered = results.filter((item) => item.id === id);
+    setOneCard(filtered);
+  };
   return (
     <div>
-      <div className="flex justify-between p-2 mx-8">
-        <h1 className="text-2xl font-semibold text-black">UnSplash Gallery</h1>
-        <div>
-          <input
-            onChange={handleChange}
-            value={search}
-            placeholder="Search"
-            className="p-2 border border-black rounded-tl-md rounded-bl-md"
-          />
-          <button
-            onClick={handleSearch}
-            className="p-2 text-white bg-gray-700 border border-black cursor-pointer hover:bg-gray-600 rounded-tr-md rounded-br-md"
+      {clicked ? (
+        <>
+          <div className="flex justify-between p-2 mx-8">
+            <h1 className="text-2xl font-semibold text-black">
+              UnSplash Gallery
+            </h1>
+            <div>
+              <input
+                onChange={handleChange}
+                value={search}
+                placeholder="Search"
+                className="p-2 border border-black rounded-tl-md rounded-bl-md"
+              />
+              <button
+                onClick={handleSearch}
+                className="p-2 text-white bg-gray-700 border border-black cursor-pointer hover:bg-gray-600 rounded-tr-md rounded-br-md"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+          <Detail item={oneCard[0]} clicked={handleBack} />
+        </>
+      ) : (
+        <>
+          <div className="flex justify-between p-2 mx-8">
+            <h1 className="text-2xl font-semibold text-black">
+              UnSplash Gallery
+            </h1>
+            <div>
+              <input
+                onChange={handleChange}
+                value={search}
+                placeholder="Search"
+                className="p-2 border border-black rounded-tl-md rounded-bl-md"
+              />
+              <button
+                onClick={handleSearch}
+                className="p-2 text-white bg-gray-700 border border-black cursor-pointer hover:bg-gray-600 rounded-tr-md rounded-br-md"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+          {error && <p>Error: {error.message}</p>}
+          <InfiniteScroll
+            dataLength={results.length}
+            next={handleFetchMore}
+            hasMore={true}
+            loader={<h4>Loading...</h4>}
           >
-            Search
-          </button>
-        </div>
-      </div>
-      {error && <p>Error: {error.message}</p>}
-      <InfiniteScroll
-        dataLength={results.length}
-        next={handleFetchMore}
-        hasMore={true}
-        loader={<h4>Loading...</h4>}
-      >
-        <div className="gap-8 mx-8 columns-2xs">
-          {results.map((result) => (
-            <Card key={result.id} result={result} />
-          ))}
-        </div>
-      </InfiniteScroll>
+            <div className="gap-8 mx-8 columns-2xs">
+              {results.map((result) => (
+                <Card
+                  handleClick={getId}
+                  key={result.id}
+                  result={result}
+                  handleSwitch={handleSwitch}
+                />
+              ))}
+            </div>
+          </InfiniteScroll>
+        </>
+      )}
     </div>
   );
 };

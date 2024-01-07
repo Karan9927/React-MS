@@ -1,8 +1,13 @@
 import React from "react";
 
-const Card = ({ result }) => {
+const Card = ({ result, handleClick, handleSwitch }) => {
+  const clickHandler = () => {
+    handleClick(result.id);
+    handleSwitch();
+  };
   return (
     <div
+      onClick={clickHandler}
       key={result.id}
       className="relative overflow-hidden duration-300 rounded-md cursor-pointer hyphens-auto hover:scale-105"
     >
