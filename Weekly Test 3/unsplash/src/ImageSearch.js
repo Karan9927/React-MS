@@ -1,0 +1,111 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Card from "./Card";
+
+const ImageSearch = () => {
+  const [results, setResults] = useState([]);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [search, setSearch] = useState("");
+
+  const fetchImages = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        `https://api.unsplash.com/photos?client_id=9YXdcE1dzAW_eAiSHOUMpItCVUgiTtQwidbGQ33hD50&page=${page}`
+      );
+
+      const currentSet = new Set(results.map((item) => item.id));
+
+      const uniqueResults = response.data.filter(
+        (item) => !currentSet.has(item.id)
+      );
+
+      setResults((prevResults) => [...prevResults, ...uniqueResults]);
+      setPage((prevPage) => prevPage + 1);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchImages();
+  }, []);
+
+  const handleFetchMore = () => {
+    if (search.trim() === "") {
+      fetchImages();
+    } else {
+      handleSearch();
+    }
+  };
+
+  const handleSearch = () => {
+    if (search.trim() === "") {
+      setPage(1);
+      fetchImages();
+    } else {
+      const searched = search.toLowerCase();
+      axios
+        .get(`https://api.unsplash.com/search/photos`, {
+          params: {
+            query: searched,
+            per_page: 50,
+            client_id: "9YXdcE1dzAW_eAiSHOUMpItCVUgiTtQwidbGQ33hD50",
+            page: 1,
+          },
+        })
+        .then((response) => {
+          setResults(response.data.results);
+        })
+        .catch((error) => {
+          setError(error);
+        });
+    }
+  };
+  console.log(results);
+  const handleChange = (event) => {
+    setSearch(event.target.value);
+  };
+
+  return (
+    <div>
+      <div className="flex justify-between p-2 mx-8">
+        <h1 className="text-2xl font-semibold text-black">UnSplash Gallery</h1>
+        <div>
+          <input
+            onChange={handleChange}
+            value={search}
+            placeholder="Search"
+            className="p-2 border border-black rounded-tl-md rounded-bl-md"
+          />
+          <button
+            onClick={handleSearch}
+            className="p-2 text-white bg-gray-700 border border-black cursor-pointer hover:bg-gray-600 rounded-tr-md rounded-br-md"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+      {error && <p>Error: {error.message}</p>}
+      <InfiniteScroll
+        dataLength={results.length}
+        next={handleFetchMore}
+        hasMore={true}
+        loader={<h4>Loading...</h4>}
+      >
+        <div className="gap-8 mx-8 columns-2xs">
+          {results.map((result) => (
+            <Card key={result.id} result={result} />
+          ))}
+        </div>
+      </InfiniteScroll>
+    </div>
+  );
+};
+
+export default ImageSearch;
