@@ -70,7 +70,6 @@ const ImageSearch = () => {
         });
     }
   };
-  console.log(results);
   const handleChange = (event) => {
     setSearch(event.target.value);
   };
@@ -88,8 +87,8 @@ const ImageSearch = () => {
     <div>
       {clicked ? (
         <>
-          <div className="flex justify-between p-2 mx-8">
-            <h1 className="text-2xl font-semibold text-black">
+          <div className="flex justify-between p-2 mx-2 sm:mx-8">
+            <h1 className="font-semibold text-black text-[20px] sm:text-2xl">
               UnSplash Gallery
             </h1>
             <div>
@@ -97,11 +96,11 @@ const ImageSearch = () => {
                 onChange={handleChange}
                 value={search}
                 placeholder="Search"
-                className="p-2 border border-black rounded-tl-md rounded-bl-md"
+                className="p-1 sm:w-[200px] w-[110px] border border-black sm:p-2 rounded-tl-md rounded-bl-md"
               />
               <button
                 onClick={handleSearch}
-                className="p-2 text-white bg-gray-700 border border-black cursor-pointer hover:bg-gray-600 rounded-tr-md rounded-br-md"
+                className="p-1 text-white bg-gray-700 border border-black cursor-pointer sm:p-2 hover:bg-gray-600 rounded-tr-md rounded-br-md"
               >
                 Search
               </button>
@@ -111,8 +110,8 @@ const ImageSearch = () => {
         </>
       ) : (
         <>
-          <div className="flex justify-between p-2 mx-8">
-            <h1 className="text-2xl font-semibold text-black">
+          <div className="flex justify-between p-2 mx-2 sm:mx-8">
+            <h1 className="font-semibold text-black text-[20px] sm:text-2xl">
               UnSplash Gallery
             </h1>
             <div>
@@ -120,11 +119,11 @@ const ImageSearch = () => {
                 onChange={handleChange}
                 value={search}
                 placeholder="Search"
-                className="p-2 border border-black rounded-tl-md rounded-bl-md"
+                className="p-1 sm:w-[200px] w-[110px] border border-black sm:p-2 rounded-tl-md rounded-bl-md"
               />
               <button
                 onClick={handleSearch}
-                className="p-2 text-white bg-gray-700 border border-black cursor-pointer hover:bg-gray-600 rounded-tr-md rounded-br-md"
+                className="p-1 text-white bg-gray-700 border border-black cursor-pointer sm:p-2 hover:bg-gray-600 rounded-tr-md rounded-br-md"
               >
                 Search
               </button>
