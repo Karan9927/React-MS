@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: rgb(241, 241, 241);
+  background: linear-gradient(
+    45deg,
+    rgba(241, 241, 241, 1) 50%,
+    rgba(158, 232, 255, 1) 50%
+  );
+  background-repeat: no-repeat;
+}
+.dark-mode {
+  color: white;
+  background: linear-gradient(45deg, #5c5c5c 50%, #1b1b1b 50%);
+}
