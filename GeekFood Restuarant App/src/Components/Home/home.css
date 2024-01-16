@@ -1,0 +1,125 @@
+.hero-image {
+  height: 100vh;
+}
+.hero {
+  background-image: url("https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+.hero-container {
+  padding: 32px 128px;
+}
+.heading {
+  font-size: 52px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 50px;
+}
+.red-heading {
+  color: #be123c;
+}
+.sub-heading {
+  font-size: 20px;
+  margin-top: 16px;
+  text-align: center;
+}
+.button-container {
+  margin-top: 32px;
+  display: flex;
+  gap: 20px;
+}
+.button-container button {
+  padding: 12px 48px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+.red {
+  background-color: #e11d48;
+  color: white;
+  font-weight: 600;
+}
+.red:hover {
+  background-color: #be123c;
+}
+.white {
+  background-color: white;
+  color: #e11d48;
+  font-weight: 600;
+}
+.white:hover {
+  color: #be123c;
+}
+.main {
+  padding: 64px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-image img {
+  width: 2000px;
+  z-index: 100;
+}
+.main-text {
+  background-color: #f3f4f6;
+  padding: 140px 120px;
+  margin-left: -50px;
+}
+.main-text p {
+  margin-top: 16px;
+}
+.main-text button {
+  width: fit-content;
+  padding: 12px 48px;
+  margin-top: 32px;
+  border-radius: 4px;
+  border: 1px solid #1d4ed8;
+  background-color: #1d4ed8;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.main-text button:hover {
+  background-color: white;
+  color: #1d4ed8;
+}
+.feedbacks-container {
+  padding: 64px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+  justify-content: center;
+  align-items: start;
+}
+.avatar-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+.feedback-container {
+  width: 332px;
+}
+.comment {
+  background-color: #f9fafb;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 12px;
+  padding: 24px;
+  line-height: 24px;
+  color: #374151;
+}
+.avatar-container {
+  display: flex;
+  margin-top: 10px;
+  gap: 20px;
+}
+.name {
+  font-weight: 600;
+}
+.position {
+  font-size: 14px;
+}
