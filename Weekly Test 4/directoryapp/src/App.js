@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import "./App.css";
-import Form from "./Form";
+import Form from "./Components/Form";
 
 function App() {
   const [data, setData] = useState(
