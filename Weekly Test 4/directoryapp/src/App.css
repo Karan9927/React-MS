@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+table th {
+  text-align: center;
+  padding: 6px 0;
+  border: 1px solid gray;
+}
+table td {
+  border: 1px solid gray;
+  padding: 6px;
+}
+form input {
+  border: none;
+  width: 100%;
+  border: 1px solid gray;
+  color: black;
+  padding: 0 8px;
+}
+
+form {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
